@@ -1,8 +1,11 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { lightTheme } from '@/themes'
+import { ThemeProvider } from '@mui/material'
+import { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }: AppProps) => (
+  <ThemeProvider theme={lightTheme}>
+    <Component {...pageProps} />
+  </ThemeProvider>
+)
 
-export default MyApp
+export default App
