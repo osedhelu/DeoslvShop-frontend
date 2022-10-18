@@ -1,7 +1,22 @@
-import { initialData } from "@/database/products";
-import { AppBar, Box, Button, Link, Toolbar, Typography } from "@mui/material";
+import {
+  MenuOpen,
+  MenuOutlined,
+  SearchOutlined,
+  ShoppingBagOutlined
+} from "@mui/icons-material";
+import {
+  AppBar,
+  Badge,
+  Box,
+  Button,
+  IconButton,
+  Link,
+  Toolbar,
+  Typography
+} from "@mui/material";
 import NextLink from "next/link";
 import { FC } from "react";
+import { MenuJSX } from "./ListMenu";
 
 interface props {}
 
@@ -18,17 +33,36 @@ export const Navbar: FC<props> = ({}) => {
         {/* TASK: flex */}
         <Box flex={1} />
 
-        <Box>
-          {initialData.menu.map((resp, index) => (
-            <NextLink key={index} href={resp.path} passHref>
-              <Link>
-                <Button>{resp.title}</Button>
-              </Link>
-            </NextLink>
-          ))}
+        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          {MenuJSX.map(
+            (resp, index) =>
+              !resp.isAdmin && (
+                <NextLink key={index} href={resp.path} passHref>
+                  <Link>
+                    <Button>{resp.title}</Button>
+                  </Link>
+                </NextLink>
+              )
+          )}
         </Box>
 
         <Box flex={1} />
+
+        <IconButton>
+          <SearchOutlined />
+        </IconButton>
+
+        <NextLink href={"/cart"} passHref>
+          <Link>
+            <IconButton>
+              <Badge badgeContent={3} color="secondary">
+                <ShoppingBagOutlined color="action" />
+              </Badge>
+            </IconButton>
+          </Link>
+        </NextLink>
+
+        <IconButton>{false ? <MenuOpen /> : <MenuOutlined />}</IconButton>
 
         {/* TASK: flex */}
       </Toolbar>

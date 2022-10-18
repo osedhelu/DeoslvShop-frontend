@@ -1,36 +1,10 @@
-interface SeedProduct {
-  description: string;
-  images: string[];
-  inStock: number;
-  price: number;
-  sizes: ValidSizes[];
-  slug: string;
-  tags: string[];
-  title: string;
-  type: ValidTypes;
-  gender: "men" | "women" | "kid" | "unisex";
-}
+import { SeedProduct } from "@/interface";
 
-type ValidSizes = "XS" | "S" | "M" | "L" | "XL" | "XXL" | "XXXL";
-type ValidTypes = "shirts" | "pants" | "hoodies" | "hats";
-
-interface iMenu {
-  title: string;
-  icon: string;
-  path: string;
-}
 interface SeedData {
   products: SeedProduct[];
-  menu: iMenu[];
 }
 
 export const initialData: SeedData = {
-  menu: [
-    { icon: "", title: "men", path: "/category/men" },
-    { icon: "", title: "woman", path: "/category/woman" },
-    { icon: "", title: "kiss", path: "/category/kiss" },
-    { icon: "", title: "unisex", path: "/category/unisex" },
-  ],
   products: [
     {
       description:
