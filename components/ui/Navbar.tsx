@@ -2,7 +2,7 @@ import {
   MenuOpen,
   MenuOutlined,
   SearchOutlined,
-  ShoppingBagOutlined
+  ShoppingBagOutlined,
 } from "@mui/icons-material";
 import {
   AppBar,
@@ -12,7 +12,7 @@ import {
   IconButton,
   Link,
   Toolbar,
-  Typography
+  Typography,
 } from "@mui/material";
 import NextLink from "next/link";
 import { FC } from "react";
@@ -32,7 +32,6 @@ export const Navbar: FC<props> = ({}) => {
         </NextLink>
         {/* TASK: flex */}
         <Box flex={1} />
-
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
           {MenuJSX.map(
             (resp, index) =>
@@ -45,13 +44,10 @@ export const Navbar: FC<props> = ({}) => {
               )
           )}
         </Box>
-
         <Box flex={1} />
-
         <IconButton>
           <SearchOutlined />
         </IconButton>
-
         <NextLink href={"/cart"} passHref>
           <Link>
             <IconButton>
@@ -61,10 +57,7 @@ export const Navbar: FC<props> = ({}) => {
             </IconButton>
           </Link>
         </NextLink>
-
         <IconButton>{false ? <MenuOpen /> : <MenuOutlined />}</IconButton>
-
-        {/* TASK: flex */}
       </Toolbar>
     </AppBar>
   );
