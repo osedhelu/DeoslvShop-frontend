@@ -14,7 +14,9 @@ export const ItemCounter: FC<props> = ({}) => {
       <Typography sx={{ width: 40, textAlign: "center" }}> {value}</Typography>
       <IconButton
         onClick={() => (value >= 10 ? 10 : setValue(value + 1))}
-      ></IconButton>
+    >
+      <AddCircleOutline/>
+    </IconButton>
     </Box>
   );
 };
