@@ -4,9 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-./bun.lockb
-./node_modules.bun
-./node_modules.server.bun
+/bun.lockb
+/yarn.lock
+/node_modules.bun
+/node_modules.server.bun
 # testing
 /coverage
 
