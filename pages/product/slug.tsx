@@ -9,7 +9,8 @@ interface props {
 }
 
 const ProdcutSlug: NextPage<props> = ({ product }) => {
-  console.log(product);
+
+  console.log(`zzxxxxxxxxxxxx${product['description']}`);
   return (
     <ShopLayout description={product.description} title={product.title}>
       <Grid container spacing={3} sx={{padding:"33px"}}>
