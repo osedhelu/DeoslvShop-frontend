@@ -1,7 +1,7 @@
 import { ItemCounter } from "@/components/ui";
 import { iProduct } from "@/interface";
 import { FormatNumber } from "@/utils";
-import { Box, Typography, Button, Chip } from "@mui/material";
+import { Box, Button, Chip, Typography } from "@mui/material";
 import { FC } from "react";
 import { SizeSelector } from "./SizeSelector";
 

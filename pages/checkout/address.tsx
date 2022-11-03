@@ -3,12 +3,10 @@ import {
   Box,
   Button,
   FormControl,
-  Grid,
-  InputLabel,
-  MenuItem,
+  Grid, MenuItem,
   Select,
   TextField,
-  Typography,
+  Typography
 } from "@mui/material";
 import { NextPage } from "next";
 

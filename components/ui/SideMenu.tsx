@@ -1,4 +1,11 @@
 import {
+  AccountCircleOutlined,
+  ConfirmationNumberOutlined,
+  LoginOutlined,
+  SearchOutlined,
+  VpnKeyOutlined
+} from "@mui/icons-material";
+import {
   Box,
   Divider,
   Drawer,
@@ -9,17 +16,8 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  ListSubheader,
+  ListSubheader
 } from "@mui/material";
-import {
-  AccountCircleOutlined,
-  AdminPanelSettings,
-  CategoryOutlined,
-  ConfirmationNumberOutlined,
-  LoginOutlined,
-  SearchOutlined,
-  VpnKeyOutlined,
-} from "@mui/icons-material";
 
 import { FC } from "react";
 import { MenuJSX } from "./ListMenu";

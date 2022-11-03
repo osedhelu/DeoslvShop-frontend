@@ -1,1 +1,3 @@
-export * from './ShopLayout'
+export * from "./AuthLayoutu";
+export * from "./ShopLayout";
+

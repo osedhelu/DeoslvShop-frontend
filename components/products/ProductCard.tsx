@@ -1,5 +1,4 @@
 import { iProduct } from "@/interface";
-import NextLink from "next/link";
 import { FormatNumber } from "@/utils";
 import {
   Box,
@@ -10,7 +9,8 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-import { FC, useEffect, useMemo, useState } from "react";
+import NextLink from "next/link";
+import { FC, useMemo, useState } from "react";
 
 interface props {
   product: iProduct;
@@ -18,11 +18,9 @@ interface props {
 
 export const ProductCard: FC<props> = ({ product }) => {
   const [isHover, setIsHover] = useState(false);
-  useEffect(() => {}, [isHover]);
-  const url = useMemo(
-    () => `products/${product.images[isHover ? 1 : 0]}`,
-    [isHover]
-  );
+  const url = useMemo(() => `products/${product.images[isHover ? 1 : 0]}`, [
+    isHover,
+  ]);
   return (
     <Grid
       item

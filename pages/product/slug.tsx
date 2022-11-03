@@ -8,12 +8,23 @@ interface props {
   product: iProduct;
 }
 
-const ProdcutSlug: NextPage<props> = ({ product }) => {
-
-  console.log(`zzxxxxxxxxxxxx${product['description']}`);
+const ProdcutSlug: NextPage<props> = ({
+  product = {
+    description: "",
+    gender: "kid",
+    images: [],
+    inStock: 0,
+    price: 0,
+    sizes: [],
+    slug: "",
+    tags: [],
+    title: "",
+    type: "shirts",
+  },
+}) => {
   return (
     <ShopLayout description={product.description} title={product.title}>
-      <Grid container spacing={3} sx={{padding:"33px"}}>
+      <Grid container spacing={3} sx={{ padding: "33px" }}>
         <Grid item xs={12} sm={7}>
           <ProductSlideShow imgs={product.images} />
         </Grid>

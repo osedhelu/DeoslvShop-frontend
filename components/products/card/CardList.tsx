@@ -1,4 +1,6 @@
+import { ItemCounter } from "@/components/ui";
 import { iProduct } from "@/interface";
+import { FormatNumber } from "@/utils";
 import {
   Box,
   Button,
@@ -6,12 +8,10 @@ import {
   CardMedia,
   Grid,
   Link,
-  Typography,
+  Typography
 } from "@mui/material";
-import { FC } from "react";
 import NextLink from "next/link";
-import { ItemCounter } from "@/components/ui";
-import { FormatNumber } from "@/utils";
+import { FC } from "react";
 
 interface props {
   products: iProduct[];

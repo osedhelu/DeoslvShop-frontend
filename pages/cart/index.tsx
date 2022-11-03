@@ -2,14 +2,14 @@ import { CardDetails, CardList } from "@/components";
 import { ShopLayout } from "@/components/layout";
 import { initialData } from "@/database/products";
 import { iProduct } from "@/interface";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { GetServerSideProps, NextPage } from "next";
 
 interface props {
   products: iProduct[];
 }
 
-const CartScreen: NextPage<props> = ({ products }) => {
+const CartScreen: NextPage<props> = ({ products = [] }) => {
   return (
     <ShopLayout
       description="Carrito de compra de la tienda"
@@ -24,7 +24,15 @@ const CartScreen: NextPage<props> = ({ products }) => {
         </Grid>
 
         <Grid item xs={12} sm={5}>
-          <CardDetails />
+          <CardDetails
+            jsxAction={
+              <Box sx={{ mt: 3 }}>
+                <Button color="secondary" className="circular-btn" fullWidth>
+                  Checkout
+                </Button>
+              </Box>
+            }
+          />
         </Grid>
       </Grid>
     </ShopLayout>

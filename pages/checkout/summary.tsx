@@ -1,7 +1,7 @@
-import { ShopLayout, CardList, CardDetails } from "@/components";
+import { CardDetails, CardList, ShopLayout } from "@/components";
 import { initialData } from "@/database/products";
 import { iProduct } from "@/interface";
-import { Typography, Grid } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { GetServerSideProps, NextPage } from "next";
 
 interface props {
@@ -21,9 +21,24 @@ const SummaryPage: NextPage<props> = ({ products }) => {
         <Grid item xs={12} sm={7}>
           <CardList products={products} />
         </Grid>
-
         <Grid item xs={12} sm={5}>
-          <CardDetails title="Resumen (3 productos)" />
+          <CardDetails
+            checkoutAddress={{
+              city: "Stittsville, HYA 23S",
+              country: "Canadá",
+              direccion: "323 Algun Lugar",
+              name: "Oscar Herrera",
+              phone: "+1 234738434",
+            }}
+            title="Resumen (3 productos)"
+            jsxAction={
+              <Box sx={{ mt: 3 }}>
+                <Button color="secondary" className="circular-btn" fullWidth>
+                  Checkout
+                </Button>
+              </Box>
+            }
+          />
         </Grid>
       </Grid>
     </ShopLayout>

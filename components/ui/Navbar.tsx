@@ -2,7 +2,7 @@ import {
   MenuOpen,
   MenuOutlined,
   SearchOutlined,
-  ShoppingBagOutlined,
+  ShoppingBagOutlined
 } from "@mui/icons-material";
 import {
   AppBar,
@@ -12,7 +12,7 @@ import {
   IconButton,
   Link,
   Toolbar,
-  Typography,
+  Typography
 } from "@mui/material";
 import NextLink from "next/link";
 import { FC } from "react";
