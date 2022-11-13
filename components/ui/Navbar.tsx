@@ -2,7 +2,7 @@ import {
   MenuOpen,
   MenuOutlined,
   SearchOutlined,
-  ShoppingBagOutlined
+  ShoppingBagOutlined,
 } from "@mui/icons-material";
 import {
   AppBar,
@@ -12,15 +12,18 @@ import {
   IconButton,
   Link,
   Toolbar,
-  Typography
+  Typography,
 } from "@mui/material";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import { FC } from "react";
 import { MenuJSX } from "./ListMenu";
 
 interface props {}
 
 export const Navbar: FC<props> = ({}) => {
+  let { asPath } = useRouter();
+
   return (
     <AppBar>
       <Toolbar>
@@ -38,7 +41,9 @@ export const Navbar: FC<props> = ({}) => {
               !resp.isAdmin && (
                 <NextLink key={index} href={resp.path} passHref>
                   <Link>
-                    <Button>{resp.title}</Button>
+                    <Button color={asPath === resp.path ? "info" : "primary"}>
+                      {resp.title}
+                    </Button>
                   </Link>
                 </NextLink>
               )

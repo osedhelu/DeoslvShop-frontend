@@ -1,18 +1,18 @@
-import { ShopLayout, ProductList, FullScreenLoading } from "@/components";
+import { ProductList, ShopLayout } from "@/components";
 import { useProduct } from "@/hooks";
 import { Box, Pagination, Typography } from "@mui/material";
-import { setServers } from "dns";
 import { NextPage } from "next";
 import { useState } from "react";
+
 interface props {}
 
-const HomePage: NextPage<props> = () => {
+const MenPage: NextPage<props> = ({}) => {
   const [page, setPage] = useState(1);
-  const [pathSearch, setpathSearch] = useState(`?limit=9&offset=0`);
+  const [pathSearch, setpathSearch] = useState(`?gender=men&limit=9&offset=0`);
   const { isError, isLoading, resp } = useProduct(`/product/${pathSearch}`);
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     let page = (value - 1) * 9;
-    setpathSearch(`?limit=9&offset=${page}`);
+    setpathSearch(`?gender=men&limit=9&offset=${page}`);
     setPage(value);
   };
   if (!isLoading) {
@@ -20,15 +20,12 @@ const HomePage: NextPage<props> = () => {
   }
 
   return (
-    <ShopLayout
-      description="encuentra los mejores productos de Deoslv-shop"
-      title="Deoslv-shop"
-    >
+    <ShopLayout title="Gender" description="Gender">
       <Typography variant="h1" component="h1">
-        Tienda
+        Hombres
       </Typography>
       <Typography variant="h2" sx={{ mb: 1 }}>
-        Todos los productos
+        Productos para El
       </Typography>
       <ProductList loading={isLoading} products={resp.results} />
       <Box
@@ -47,4 +44,4 @@ const HomePage: NextPage<props> = () => {
   );
 };
 
-export default HomePage;
+export default MenPage;

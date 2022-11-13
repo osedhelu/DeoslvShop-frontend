@@ -36,8 +36,8 @@ export const MenuJSX: iMenux[] = [
   {
     isAdmin: false,
     icon: ChildFriendly,
-    title: "kiss",
-    path: "/category/kiss",
+    title: "kid",
+    path: "/category/kid",
   },
   {
     isAdmin: false,
